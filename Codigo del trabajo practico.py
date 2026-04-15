@@ -125,13 +125,17 @@ ea3 = 100.0
 iter3 = 0
 
 print(f"Punto Fijo (Valor inicial: x={x3}, Tolerancia: {es3}%):")
+print("Iteración | x | Error Aproximado (%)")
+print("-" * 35)
 while ea3 >= es3:
     x3_nuevo = g3(x3)
     ea3 = calcular_ea(x3_nuevo, x3)
+    print(f"{iter3+1:>9} | {x3_nuevo:.6f} | {ea3:.6f}")
     x3 = x3_nuevo
     iter3 += 1
 
 print(f"-> Raíz aproximada: {x3:.6f} lograda en {iter3} iteraciones (Error = {ea3:.5f}%)")
+print(f"Verificación: f({x3:.6f}) = {2*np.sin(np.sqrt(x3)) - x3:.8f} (debe ser cercano a 0)")
 
 # ---------------------------------------------------------
 # EJERCICIO 4
@@ -159,9 +163,12 @@ ea4_pf = 100.0
 iter4_pf = 0
 
 print(f"1. Punto Fijo (Valor inicial: x={x_inicial}):")
+print("Iteración | x | Error Aproximado (%)")
+print("-" * 35)
 while ea4_pf > es4:
     x4_nuevo = g4(x4_pf)
     ea4_pf = calcular_ea(x4_nuevo, x4_pf)
+    print(f"{iter4_pf+1:>9} | {x4_nuevo:.6f} | {ea4_pf:.6f}")
     x4_pf = x4_nuevo
     iter4_pf += 1
 print(f"-> Raíz (Punto Fijo): {x4_pf:.5f} en {iter4_pf} iteraciones (Error = {ea4_pf:.4f}%)")
@@ -172,9 +179,12 @@ ea4_nr = 100.0
 iter4_nr = 0
 
 print(f"\n2. Newton-Raphson (Valor inicial: x={x_inicial}):")
+print("Iteración | x | Error Aproximado (%)")
+print("-" * 35)
 while ea4_nr > es4:
     x4_nuevo = x4_nr - (f4(x4_nr) / df4(x4_nr))
     ea4_nr = calcular_ea(x4_nuevo, x4_nr)
+    print(f"{iter4_nr+1:>9} | {x4_nuevo:.6f} | {ea4_nr:.6f}")
     x4_nr = x4_nuevo
     iter4_nr += 1
 print(f"-> Raíz (Newton-Raphson): {x4_nr:.5f} en {iter4_nr} iteraciones (Error = {ea4_nr:.4f}%)")
