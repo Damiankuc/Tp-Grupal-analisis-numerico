@@ -18,7 +18,7 @@ def falsa_posicion(f, xl, xu, es, max_iter=100):
     
    #Método de la Falsa Posición (Regula Falsi).
    # Encuentra raíz de f(x)=0 en intervalo inicial [xl, xu] donde f(xl)*f(xu) <= 0.
-    
+    #xd
    # Parámetros:
     #- f: función a evaluar
     #- xl: límite INFERIOR inicial del intervalo de búsqueda
