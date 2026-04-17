@@ -6,8 +6,8 @@ def f(x):
 
 def df(x):
     return math.exp(x) - 6 * x
-
-# 2. Definimos el criterio de error esperado (4 cifras significativas)
+#2. Definimos el criterio de error esperado
+#  (4 cifras significativas)
 # es: Tolerancia de error relativo esperado en porcentaje (%).
 #     Para n cifras significativas: es = 0.5 * 10^(2 - n) %
 #     Aquí n=4 => es = 0.005 %
@@ -135,6 +135,7 @@ intervalos = [(0, 1), (3, 5)]
 
 print(f"Criterio de error (es): {es}%\\n")
 
+#Resultados para cada método en cada intervalo
 for (a, b) in intervalos:
     print("-" * 50)
     print(f"Buscando raíz en el intervalo [{a}, {b}]")
